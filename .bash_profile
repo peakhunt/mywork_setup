@@ -146,12 +146,15 @@ function O()
   filename=${file%.*}
   extension=${file##*.}
 
+  echo "filename: ${filename}"
+  echo "extension: ${extension}"
+
   case ${extension} in
   'pdf')
-    xdg-open $file &
+    xdg-open "$file" &
     ;;
   'png' | 'jpg')
-    display $file &
+    display "$file" &
     ;;
   *)
     echo "unknown extension: $extension"
